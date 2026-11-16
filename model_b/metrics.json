@@ -1,0 +1,179 @@
+{
+  "n": 360,
+  "classes": {
+    "0": 180,
+    "1": 180
+  },
+  "unique_location_count": 360,
+  "distinct_rainfall_values": 4,
+  "split": {
+    "seed": 0,
+    "n_train": 247,
+    "n_test": 113,
+    "n_train_blocks": 28,
+    "n_test_blocks": 10,
+    "train_counts": {
+      "0": 130,
+      "1": 117
+    },
+    "test_counts": {
+      "1": 63,
+      "0": 50
+    },
+    "block_overlap": 0
+  },
+  "holdout_results": {
+    "Most-frequent baseline": {
+      "accuracy": 0.4425,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.3067,
+      "persistent_f1": 0.0,
+      "roc_auc": 0.5,
+      "brier": 0.5575,
+      "test_n": 113
+    },
+    "NDVI-only Random Forest": {
+      "accuracy": 0.9204,
+      "balanced_accuracy": 0.9224,
+      "macro_f1": 0.9197,
+      "persistent_f1": 0.9268,
+      "roc_auc": 0.9452,
+      "brier": 0.0685,
+      "test_n": 113
+    },
+    "Full Random Forest": {
+      "accuracy": 0.9204,
+      "balanced_accuracy": 0.9203,
+      "macro_f1": 0.9194,
+      "persistent_f1": 0.928,
+      "roc_auc": 0.9876,
+      "brier": 0.0518,
+      "test_n": 113
+    }
+  },
+  "cross_validation_5fold": {
+    "NDVI-only Random Forest": [
+      {
+        "fold": 1,
+        "n": 72,
+        "class_0": 41,
+        "class_1": 31,
+        "balanced_accuracy": 0.919,
+        "macro_f1": 0.9156
+      },
+      {
+        "fold": 2,
+        "n": 72,
+        "class_0": 22,
+        "class_1": 50,
+        "balanced_accuracy": 0.94,
+        "macro_f1": 0.9081
+      },
+      {
+        "fold": 3,
+        "n": 73,
+        "class_0": 35,
+        "class_1": 38,
+        "balanced_accuracy": 0.7586,
+        "macro_f1": 0.7511
+      },
+      {
+        "fold": 4,
+        "n": 72,
+        "class_0": 40,
+        "class_1": 32,
+        "balanced_accuracy": 0.9469,
+        "macro_f1": 0.9441
+      },
+      {
+        "fold": 5,
+        "n": 71,
+        "class_0": 42,
+        "class_1": 29,
+        "balanced_accuracy": 0.9113,
+        "macro_f1": 0.9001
+      }
+    ],
+    "Full Random Forest": [
+      {
+        "fold": 1,
+        "n": 72,
+        "class_0": 41,
+        "class_1": 31,
+        "balanced_accuracy": 0.9272,
+        "macro_f1": 0.9289
+      },
+      {
+        "fold": 2,
+        "n": 72,
+        "class_0": 22,
+        "class_1": 50,
+        "balanced_accuracy": 0.9473,
+        "macro_f1": 0.9361
+      },
+      {
+        "fold": 3,
+        "n": 73,
+        "class_0": 35,
+        "class_1": 38,
+        "balanced_accuracy": 0.8244,
+        "macro_f1": 0.8218
+      },
+      {
+        "fold": 4,
+        "n": 72,
+        "class_0": 40,
+        "class_1": 32,
+        "balanced_accuracy": 0.9437,
+        "macro_f1": 0.9437
+      },
+      {
+        "fold": 5,
+        "n": 71,
+        "class_0": 42,
+        "class_1": 29,
+        "balanced_accuracy": 0.9405,
+        "macro_f1": 0.9287
+      }
+    ]
+  },
+  "cv_summary": {
+    "NDVI-only Random Forest": {
+      "mean_macro_f1": 0.8838,
+      "range_macro_f1": [
+        0.7511,
+        0.9441
+      ],
+      "mean_balanced_accuracy": 0.8952
+    },
+    "Full Random Forest": {
+      "mean_macro_f1": 0.9118,
+      "range_macro_f1": [
+        0.8218,
+        0.9437
+      ],
+      "mean_balanced_accuracy": 0.9166
+    }
+  },
+  "limitations": [
+    "Proxy label uses later satellite NDVI thresholds, not native plant survival",
+    "Balanced class selection does not describe landscape prevalence",
+    "Geographic blocks have no separation buffer; spatial autocorrelation remains possible",
+    "Only Lahbab and one before/after window, with no temporally independent evaluation",
+    "Rainfall and land-surface temperature inputs are coarser than the HLS features",
+    "No field validation or irrigation-status verification; not a calibrated planting score"
+  ],
+  "simple_threshold_comparison": {
+    "decision_tree_threshold_ndvi": 0.13359,
+    "test_accuracy": 0.9204,
+    "test_macro_f1": 0.9194,
+    "spatial_cv_macro_f1_mean": 0.9148,
+    "spatial_cv_macro_f1_folds": [
+      0.9434,
+      0.9227,
+      0.8356,
+      0.9579,
+      0.9147
+    ]
+  }
+}
