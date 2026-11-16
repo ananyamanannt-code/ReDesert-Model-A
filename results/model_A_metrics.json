@@ -1,0 +1,53 @@
+{
+  "verified_training_size": 194,
+  "verified_test_size": 96,
+  "unique_training_blocks": 76,
+  "unique_test_blocks": 26,
+  "class_counts_all": {
+    "Bare/sparse": 171,
+    "Vegetated": 94,
+    "Built/disturbed": 25
+  },
+  "class_counts_test": {
+    "Bare/sparse": 45,
+    "Vegetated": 30,
+    "Built/disturbed": 21
+  },
+  "macro_f1": 0.6914213717615559,
+  "balanced_accuracy": 0.673015873015873,
+  "baseline_macro_f1": 0.2127659574468085,
+  "classification_report": {
+    "Bare/sparse": {
+      "precision": 0.7894736842105263,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.7228915662650602,
+      "support": 45.0
+    },
+    "Vegetated": {
+      "precision": 0.4888888888888889,
+      "recall": 0.7333333333333333,
+      "f1-score": 0.5866666666666667,
+      "support": 30.0
+    },
+    "Built/disturbed": {
+      "precision": 1.0,
+      "recall": 0.6190476190476191,
+      "f1-score": 0.7647058823529411,
+      "support": 21.0
+    },
+    "accuracy": 0.6770833333333334,
+    "macro avg": {
+      "precision": 0.7594541910331385,
+      "recall": 0.673015873015873,
+      "f1-score": 0.6914213717615559,
+      "support": 96.0
+    },
+    "weighted avg": {
+      "precision": 0.7415935672514621,
+      "recall": 0.6770833333333334,
+      "f1-score": 0.6894681667847862,
+      "support": 96.0
+    }
+  },
+  "important_disclaimer": "Labels human reviewed; surface class is not a measure of native status, vegetation persistence, soil texture or planting survival."
+}
